@@ -1,17 +1,30 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
 
+body {
+  background: #000;
+}
+
 .page {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 2fr);
+  grid-template-rows: 500px 3fr 500px;
+  grid-template-areas:
+    "header header header header header header"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+  grid-gap: 40px 0;
   font-family: "Permanent Marker", cursive;
   background: #000;
-  margin: 0;
   font-size: 100%;
   font-weight: normal;
-  box-sizing: border-box;
 }
 
 .header {
-  height: 50vh;
+  width: 100%;
+  grid-area: header;
   background-color: #eee;
   background-image: url(../images/anuncio2.jpg);
   background-size: cover;
@@ -34,50 +47,141 @@
   display: flex;
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 0;
-  width: 790px;
-  margin: 100px auto 50px;
+.main {
+  grid-area: main;
 }
 
-.card{
-  width: 350px;
+.main__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  max-width: 350px;
   margin-bottom: 60px;
   padding: 45px 45px 70px;
   display: inline-block;
   color: #fff;
   margin-right: 90px;
-  box-shadow: 4px 4px 5px rgba(250, 50, 50, .4);
+  box-shadow: 4px 4px 5px rgba(250, 50, 50, 0.4);
 }
 
-.no-right-margin{
+.card_no-right_margin {
   margin-right: 0;
 }
 
-.card-title{
+.card-title {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-.card-text{
+.card-text {
   font-size: 16px;
 }
-.card-image{
+.card-image {
   width: 100%;
   margin-bottom: 25px;
 }
 
 .footer {
-  height: 300px;
+  grid-area: footer;
   background-color: #000;
   display: flex;
 }
 
-.footer-author{
+.footer-author {
   color: #fff;
   font-size: 24px;
   margin: auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 544px) {
+  .page {
+    grid-template-rows: 200px 3fr 200px;
+  }
+
+  .header-title {
+    font-size: 50px;
+  }
+
+  .card {
+    max-width: 200px;
+    margin: auto auto 10px;
+    padding: 10px;
+  }
+
+  .card_no-right_margin {
+    margin: 0 auto 10px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
+
+  .footer-author {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 545px) and (max-width: 1024px) {
+  .page {
+    grid-template-rows: 200px 3fr 200px;
+  }
+
+  .header-title {
+    font-size: 50px;
+  }
+
+  .card {
+    margin: auto auto 10px;
+    padding: 10px;
+  }
+
+  .card_no-right_margin {
+    margin: 0 auto 10px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
+
+  .footer-author {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1301px) {
+  .page {
+    max-width: 100%;
+  }
+
+  .main__content {
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .card {
+    max-width: 500px;
+  }
+
+  .card-title {
+    font-size: 35px;
+  }
+
+  .card-text {
+    font-size: 30px;
+  }
+
+  .footer-author {
+    font-size: 40px;
+  }
 }
