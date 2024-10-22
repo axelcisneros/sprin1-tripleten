@@ -1,33 +1,19 @@
-@font-face {
-  font-family: "Permanent Marker";
-  src: url(./fonts/PermanentMarker.ttf) format("truetype"),
-    url(./fonts/PermanentMarker.woff) format("woff");
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url(./fonts/Inter.ttf) format("truetype");
-}
-
-body, h1, h2, h3, h4, p, a {
-  margin: 0;
-  font-size: 100%;
-  font-weight: normal;
-}
-
-* {
-  box-sizing: border-box;
-}
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
 
 .page {
   font-family: "Permanent Marker", cursive;
   background: #000;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  box-sizing: border-box;
 }
 
 .header {
   height: 50vh;
   background-color: #eee;
-  background-image: url(./images/anuncio2.jpg);
+  background-image: url(../images/anuncio2.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
